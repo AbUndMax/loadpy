@@ -10,7 +10,18 @@ There are two types of loading animations that are provided by this package:
 1. Throbber
 2. Loading Bar
 
-To use them, import loadpy and either instantiate a Throbber or LoadingBar object.
+## Install
+
+Download the wheel file from the [latest release](https://github.com/AbUndMax/loadpy/releases/latest) and install it with pip:
+```bash
+pip install loadpy-x.x.x.whl
+```
+replace x.x.x with the version number of the downloaded wheel file.
+
+Then you are ready to use the package in your python scripts.
+```python
+import loadpy
+```
 
 ## Throbber
 <p align="center">
@@ -31,7 +42,7 @@ To stop the animation, call the `stop` method on the same object.
 ### Example
 
 ```python
-import loadpy
+from loadpy import Throbber
 
 throbber = loadpy.Throbber(desc="Loading", end="Done!", timeout=0.2)
 
@@ -59,7 +70,7 @@ The loading Bar will be initially printed to the console as soon as the object i
 ### Example
 
 ```python
-import loadpy
+from loadpy import LoadingBar
 
 steps = range(100)
 total_steps = len(steps)
