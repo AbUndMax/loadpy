@@ -9,7 +9,7 @@ To use them, import loadpy and either instantiate a Throbber or LoadingBar objec
 
 ## Throbber
 <p align="center">
-    <img src="images/throbber.gif" alt="Throbber" height="30">
+    <img src="images/throbber.gif" alt="Throbber">
 </p>
 
 ### Parameters
@@ -39,7 +39,7 @@ This example generates the animation above. - time.sleep represents a process th
 
 ## Loading Bar
 <p align="center">
-    <img src="images/loadingBar.gif" alt="Throbber" height="30">
+    <img src="images/loadingBar.gif" alt="Throbber">
 </p>
 
 ### Parameters
