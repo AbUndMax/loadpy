@@ -22,6 +22,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+__init__.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -109,4 +110,5 @@ cython_debug/
 .vscode/
 
 # Other files:
-main.py
+test.py
+setup.py
