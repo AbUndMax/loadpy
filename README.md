@@ -1,3 +1,8 @@
+[![GitHub](https://img.shields.io/badge/GitHub-loadpy-blue?logo=github)](https://github.com/AbUndMax/loadpy)
+[![License](https://img.shields.io/badge/License-CC_BY--NC_4.0-blue)](https://github.com/AbUndMax/loadpy/blob/main/LICENSE.md)
+[![Java](https://img.shields.io/badge/Python-3.6+-blue?logo=python)](https://www.python.org/downloads/release/python-360/)
+[![Badge](https://img.shields.io/github/v/release/AbUndMax/loadpy?color=brightgreen)](https://github.com/AbUndMax/loadpy/releases/latest)
+
 # loadpy
 This is a small python packages that provides simple laoding animations for CLI applications:
 
