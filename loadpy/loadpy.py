@@ -10,7 +10,7 @@ loading animations in the console. The Throbber class provides a simple
 spinner animation, while the LoadingBar class displays a progress bar
 indicating the percentage of completion.
 
-author: Niklas Gerbes
+author: Niklas G.
 github: https://github.com/AbUndMax/loadpy
 date: 2025-05-13
 """
