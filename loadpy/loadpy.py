@@ -43,6 +43,7 @@ class Throbber:
         self.__running = False
         self.__thread = None
 
+
     def start(self):
         """
         Start the loading animation.
@@ -54,16 +55,44 @@ class Throbber:
         self.__thread = threading.Thread(target=self.__animate)
         self.__thread.start()
 
+
     def __animate(self):
+        """
+        The main animation loop that runs in a separate thread.
+        This method displays a rotating spinner in the console
+        to indicate that a process is ongoing. The spinner
+        rotates continuously until the animation is stopped or interrupted.
+        """
         for c in itertools.cycle(['|', '/', '-', '\\']):
             if not self.__running:
                 break
             sys.stdout.write(f'\r{self.desc} {c}')
             sys.stdout.flush()
             time.sleep(self.timeout)
+        
+        
+    def __print_end(self, end):
+        """
+        Print the end message and clear the spinner from the console.
+        This method is called when the animation is stopped or
+        interrupted. It clears the spinner and prints the end message
+        to indicate that the loading process is complete.
+        """
         sys.stdout.write('\r' + ' ' * (len(self.desc) + 2))
-        sys.stdout.write(f'\r{self.end}\n')
+        sys.stdout.write(f'\r{end}\n')
         sys.stdout.flush()
+        
+        
+    def __end_and_join_thread(self):
+        """
+        End the animation and wait for the thread to finish.
+        This method is called when the animation is stopped or interrupted.
+        It ensures that the thread is properly terminated and cleaned up.
+        """
+        self.__running = False
+        if self.__thread is not None:
+            self.__thread.join()
+        
 
     def stop(self):
         """
@@ -72,9 +101,18 @@ class Throbber:
         the animation thread to exit. It also waits for the thread
         to finish before returning.
         """
-        self.__running = False
-        if self.__thread is not None:
-            self.__thread.join()
+        self.__end_and_join_thread()
+        self.__print_end(self.end)
+            
+            
+    def interupt(self, interrupt_message):
+        """
+        Interrupt the loading animation.
+        This method is an alias for stop() and can be used to
+        stop the animation and printout a interrupt message.
+        """
+        self.__end_and_join_thread()
+        self.__print_end(interrupt_message)
 
 
 class LoadingBar:
@@ -103,6 +141,7 @@ class LoadingBar:
         self.__percent = 0
         self.load(0)
 
+
     def load(self, current):
         """
         Update the loading bar with the current progress.
@@ -125,6 +164,7 @@ class LoadingBar:
 
         else:
             return
+        
         
     def update(self):
         """
